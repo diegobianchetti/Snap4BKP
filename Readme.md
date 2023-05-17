@@ -84,9 +84,12 @@ Selecione "NÃO" nas opções e pronto!
 
 # ROADMAP - próximos passos
 
-Estou adicionando funcionalidades e testes ao sistema, como por exemplo:
+futuras novas funcionalidades para sistema de backup:
 
 - geração de lista dos snapshots que não fazem parte do sistema de backup (para gerar lista de reservados)
-- backup de uma única instancia (onse-shot backup)
-- restore de backup (selecionar e restaurar um backup específico)
 - remover logs antigos (mais de 30 dias)
+-  Políticas de bkp
+    Diário (1 por dia, durante 7 dias)
+    Semanal (1 por semana - durante 5 semanas)
+    Mensal (1 por mês - durante 12 meses)
+    Anual (1 por ano - durante 5 anos)
