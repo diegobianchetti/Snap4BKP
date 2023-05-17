@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# VULTR API Key
+VULTR_API_KEY='COLE AQUI SUA VULTR_API_KEY'
+
+# Denifir NOME dos SnapShots para o sistema de backup
+# (não alterar depois da primeira utilização)
+PrefixoSnapshotsBKP="snap4BKP"
+
+# Formato de Data permite o controle para a remoção
+# dos SnapShots mais antigos que o limite
+SnapshotMaisAntigo="4"
+DataHora=$(date +%Y%m%d-%H%m%S)
+Data_para_Deletar=$(date +%Y%m%d --date="$SnapshotMaisAntigo days ago")
+
+#Arquivos de log (registros)
+log_dir="./logs"
+create_snapshot_log_file="$log_dir/${PrefixoSnapshotsBKP}-${DataHora}.created.log"
+remove_snapshot_log_file="$log_dir/${PrefixoSnapshotsBKP}-${DataHora}.remove.log"
+snapshots_reservados_log_file="$log_dir/${PrefixoSnapshotsBKP}-${DataHora}.reservados.log"
+
+# Lista de SnapShots reservados (marcados para NÃO remover)
+declare -A SnapshotsReservados=(
+  [SnapShot ID to Reserve - not remove]=0
+  [SnapShot ID to Reserve - not remove]=1
+)
